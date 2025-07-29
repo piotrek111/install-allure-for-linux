@@ -11,3 +11,6 @@ runs:
         apt-get install -y default-jre-headless
         dpkg -i allure-reports.deb
       shell: bash
+branding:
+  icon: "terminal"
+  color: "blue"
