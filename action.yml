@@ -1,0 +1,13 @@
+name: 'Allure Action'
+description: 'Composite action to download and install allure tool'
+runs:
+  using: "composite"
+  steps:
+    - name: Fetch and install Allure reports tool with dependencies
+      run: |
+        echo "Installing Allure Reports"
+        apt-get update && apt-get install -y curl
+        curl -o allure-reports.deb -L https://github.com/allure-framework/allure2/releases/download/2.33.0/allure_2.33.0-1_all.deb
+        apt-get install -y default-jre-headless
+        dpkg -i allure-reports.deb
+      shell: bash
